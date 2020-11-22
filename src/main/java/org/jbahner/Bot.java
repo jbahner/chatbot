@@ -98,6 +98,7 @@ public class Bot {
         for (String channel : configuration.getChannels()) {
             twitchClient.getChat().joinChannel(channel);
         }
+        twitchClient.getChat().sendMessage("real_doenertier", "Moin Leude Trymacs hier");
     }
 
 }
