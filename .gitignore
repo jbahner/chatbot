@@ -1,0 +1,4 @@
+.idea/
+target/
+.gitsecret/keys/random_seed
+src/main/resources/config.yaml
