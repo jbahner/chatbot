@@ -35,8 +35,14 @@ public class ReactOnCommand {
             case GITHUB:
                 message = "Github: https://github.com/jbahner/";
                 break;
+            case CHATBOT:
+                message = "Chatbot on Github: https://github.com/jbahner/chatbot/";
+                break;
             case FIGHT:
                 message = getFightMessage(event.getUser().getName(), event.getChannel().getName());
+                break;
+            case WIENER:
+                message = String.format("%s's wiener measures %dcm", event.getUser().getName(), new Random().nextInt(35));
                 break;
         }
         if(!message.isEmpty()) {

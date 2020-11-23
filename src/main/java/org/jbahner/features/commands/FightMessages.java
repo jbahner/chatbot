@@ -8,6 +8,6 @@ public class FightMessages {
 
     public static final List<String> FIGHT_MESSAGES = Arrays.asList(
             " and knocks him/her out with a roundhouse kick!",
-            ", but hurt itself in its confusion"
+            ", but hurt itself in its confusion!"
     );
 }
