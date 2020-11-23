@@ -6,8 +6,11 @@ import com.github.philippheuer.credentialmanager.domain.OAuth2Credential;
 import com.github.twitch4j.TwitchClient;
 import com.github.twitch4j.TwitchClientBuilder;
 import com.github.philippheuer.events4j.simple.SimpleEventHandler;
+import com.github.twitch4j.chat.events.channel.ChannelMessageEvent;
+import org.jbahner.features.LoggingOnMessage;
 
 import java.io.InputStream;
+import java.nio.channels.Channel;
 
 public class Bot {
 
@@ -74,6 +77,8 @@ public class Bot {
         SimpleEventHandler eventHandler = twitchClient.getEventManager().getEventHandler(SimpleEventHandler.class);
 
         // Register Event-based features
+        LoggingOnMessage loggingOnMessage = new LoggingOnMessage(eventHandler);
+
     }
 
     /**
@@ -98,7 +103,7 @@ public class Bot {
         for (String channel : configuration.getChannels()) {
             twitchClient.getChat().joinChannel(channel);
         }
-        twitchClient.getChat().sendMessage("real_doenertier", "Moin Leude Trymacs hier");
+        twitchClient.getChat().sendMessage("real_doenertier", "Bot connected to chat");
     }
 
 }
