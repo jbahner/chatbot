@@ -6,11 +6,10 @@ import com.github.philippheuer.credentialmanager.domain.OAuth2Credential;
 import com.github.twitch4j.TwitchClient;
 import com.github.twitch4j.TwitchClientBuilder;
 import com.github.philippheuer.events4j.simple.SimpleEventHandler;
-import com.github.twitch4j.chat.events.channel.ChannelMessageEvent;
-import org.jbahner.features.LoggingOnMessage;
+import org.jbahner.features.GreetOnFollow;
+import org.jbahner.features.ReactOnCommand;
 
 import java.io.InputStream;
-import java.nio.channels.Channel;
 
 public class Bot {
 
@@ -63,6 +62,7 @@ public class Bot {
                  * implemented in Helix
                  */
                 .withEnableKraken(true)
+                .withEnableTMI(true)
                 /*
                  * Build the TwitchClient Instance
                  */
@@ -75,10 +75,9 @@ public class Bot {
      */
     public void registerFeatures() {
         SimpleEventHandler eventHandler = twitchClient.getEventManager().getEventHandler(SimpleEventHandler.class);
-
         // Register Event-based features
-        LoggingOnMessage loggingOnMessage = new LoggingOnMessage(eventHandler);
-
+        ReactOnCommand reactOnCommand = new ReactOnCommand(eventHandler, twitchClient.getMessagingInterface());
+        GreetOnFollow greetOnFollow = new GreetOnFollow(eventHandler);
     }
 
     /**
