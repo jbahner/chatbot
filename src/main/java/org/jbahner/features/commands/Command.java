@@ -2,7 +2,8 @@ package org.jbahner.features.commands;
 
 public enum Command {
     GITHUB,
-    FIGHT,
+    KAMPF,
     CHATBOT,
-    WIENER
+    SCHLONG,
+    MARCO
 }

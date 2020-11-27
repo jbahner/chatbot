@@ -1,2 +1,5 @@
 # Fight Command
-- ... shall not pass
+...
+- shall not pass
+- schuldet dir jetzt ein kasten
+- 

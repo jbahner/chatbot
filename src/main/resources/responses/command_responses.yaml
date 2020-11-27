@@ -1,0 +1,13 @@
+github: "Github: https://github.com/jbahner/"
+
+chatbot: "Chatbot auf Github: https://github.com/jbahner/chatbot/"
+
+schlong: "%s's Schlong ist %dcm lang!"
+
+kampf: "%s kämpft gegen %s"
+
+kampf_msg:
+    - " und knocked sie/ihn mit einem Roundhouse Kick aus!"
+    - ", aber hat sich vor Verwirrung selbst verletzt!"
+
+marco: "Polo"
